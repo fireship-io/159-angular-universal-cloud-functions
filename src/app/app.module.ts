@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 
 // 1. Import the libs you need
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { BioComponent } from './bio/bio.component';
+import { AboutComponent } from './about/about.component';
 
 // 2. Add your credentials from step 1
 const config = {
@@ -24,15 +21,12 @@ const config = {
 @NgModule({
   declarations: [
     AppComponent,
-    BioComponent
+    AboutComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(config),
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireAuthModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(config),
   ],
   providers: [],
   bootstrap: [AppComponent]
